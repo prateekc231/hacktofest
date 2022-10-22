@@ -1,0 +1,37 @@
+import random
+def gamewin(computer,you):
+    if computer == you:
+        return None
+    elif computer == "s":
+        if you == "w":
+            return False
+        elif you == "g":
+            return True
+    elif computer == "w":
+        if you == "g":
+            return False
+        elif you == "s":
+            return True 
+    elif computer == "g":
+        if you == "s":
+            return False
+        elif you == "w":
+            return True
+print("computer turn : snake(s),gun(g),water(w)")            
+randomno = random.randint(1,3)
+if randomno == 1:
+    computer = "s"
+elif randomno == 2:
+    computer = "w"
+elif randomno == 3:
+    computer = "g"
+you = input("you turn : snake(s),gun(g),water(w)")
+a = gamewin(computer,you)
+print(f"computer choose {computer}")
+print(f"you choose {you}") 
+if a == None:
+    print("game is tiel")
+elif a:
+    print("game is win")
+else:
+    print("game is loose")                                     
